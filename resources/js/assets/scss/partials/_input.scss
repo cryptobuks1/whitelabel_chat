@@ -1,0 +1,35 @@
+.error-msg {
+    padding-top: 0;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    color: red;
+}
+
+.error-msg-no-mt {
+    padding-top: 0;
+    margin-bottom: 15px;
+    color: #f86c6b;
+}
+
+input {
+
+    &.br-danger {
+        border: 1px solid #f86c6b;
+        border-radius: 4px;
+
+        &:focus {
+            border-color: transparent;
+            box-shadow: 0 0 4px 1px #f86c6b;
+        }
+
+    }
+
+    &.br-bottom-danger {
+        border-bottom: 1px solid #f86c6b;
+
+        &:focus {
+            border-color: transparent;
+            border-bottom: 1px solid #f86c6b;
+        }
+    }
+}

@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Guide | InfyChat</title>
+    <meta name="description"
+          content="InfyChat is to give an easy way for everyone can chat using web browser at an affordable price.">
+    <link rel="icon" href="..../images/favicon.ico">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <link rel="stylesheet" href="../css/circular-std-font-face.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.2/js/lightgallery.js"></script>
+
+    <link rel="preload" href="../assets/css/0.styles.a625b1b5.css" as="style">
+    <link rel="preload" href="../js/styles.js" as="script">
+    <link rel="preload" href="../js/1.js" as="script">
+    <link rel="preload" href="../js/2.js" as="script">
+    <link rel="preload" href="../js/8.js" as="script">
+    <link rel="prefetch" href="../js/10.js">
+    <link rel="prefetch" href="../js/11.js">
+    <link rel="prefetch" href="../js/3.js">
+    <link rel="prefetch" href="../js/4.js">
+    <link rel="prefetch" href="../js/5.js">
+    <link rel="prefetch" href="../js/6.js">
+    <link rel="prefetch" href="../js/7.js">
+    <link rel="prefetch" href="../js/9.js">
+    <link rel="stylesheet" href="../assets/css/0.styles.a625b1b5.css">
+</head>
+<body>
+<div id="app" data-server-rendered="true">
+    <div class="theme-container">
+        <header class="navbar">
+            <div class="sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"
+                     class="icon">
+                    <path fill="currentColor"
+                          d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path>
+                </svg>
+            </div>
+            <a href="../index.html" class="home-link router-link-active"><img src="../images/logo.png" alt="InfyChat" class="logo">
+                <span class="site-name can-hide">InfyChat</span></a>
+            <div class="links"><!---->
+                <nav class="nav-links can-hide">
+                    <div class="nav-item"><a href="../../docs/index.html" class="nav-link">Home</a></div>
+                    <div class="nav-item"><a href="../docs/index.html" class="nav-link router-link-exact-active router-link-active">Docs</a>
+                    </div>
+                    <div class="nav-item"><a href="../releases/index.html" class="nav-link">Releases</a></div>
+                    <div class="nav-item"><a href="../upgrade/index.html" class="nav-link">Upgrade Guide</a></div> <!----></nav>
+            </div>
+        </header>
+        <div class="sidebar-mask"></div>
+        <aside class="sidebar">
+            <nav class="nav-links">
+                <div class="nav-item"><a href="/" class="nav-link">Home</a></div>
+                <div class="nav-item"><a href="../docs/index.html"
+                                         class="nav-link router-link-exact-active router-link-active">Docs</a></div>
+                <div class="nav-item"><a href="../releases/index.html" class="nav-link">Releases</a></div>
+                <div class="nav-item"><a href="../upgrade/index.html" class="nav-link">Upgrade Guide</a></div> <!----></nav>
+            <ul class="sidebar-links">
+                <li>
+                    <section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Guide</span> <!---->
+                    </p>
+                        <ul class="sidebar-links sidebar-group-items">
+                            <li><a href="#technologies-used" class="sidebar-link">Technologies Used</a>
+                                <ul class="sidebar-sub-headers"></ul>
+                            </li>
+                            <li><a href="#installation-guide" class="sidebar-link">Installation Guide</a>
+                                <ul class="sidebar-sub-headers">
+                                    <li class="sidebar-sub-header"><a href="#system-requirement"
+                                                                      class="sidebar-link">System Requirement</a></li>
+                                    <li class="sidebar-sub-header"><a href="#setup-infychat-system"
+                                                                      class="sidebar-link">Setup InfyChat System</a>
+                                    </li>
+                                    <li class="sidebar-sub-header"><a
+                                            href="#setup-infychat-into-local-environment" class="sidebar-link">Setup
+                                        InfyChat into Local Environment</a></li>
+                                    <li class="sidebar-sub-header"><a href="#setup-one-signal-web-notifications"
+                                                                      class="sidebar-link">Setup One Signal Web
+                                        Notifications</a></li>
+                                    <li class="sidebar-sub-header"><a href="#setup-google-auth"
+                                                                      class="sidebar-link">Setup Google Auth</a></li>
+                                    <li class="sidebar-sub-header"><a href="#setup-facebook-auth"
+                                                                      class="sidebar-link">Setup Facebook Auth</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#non-technical-users" class="sidebar-link">Non-Technical Users</a>
+                                <ul class="sidebar-sub-headers">
+                                    <li class="sidebar-sub-header"><a href="#_1-copy-files-to-web-server"
+                                                                      class="sidebar-link">1. Copy files to web
+                                        server</a></li>
+                                    <li class="sidebar-sub-header"><a href="#_2-setup-default-db"
+                                                                      class="sidebar-link">2. Setup Default DB</a></li>
+                                    <li class="sidebar-sub-header"><a href="#_3-setup-environment-env-file"
+                                                                      class="sidebar-link">3. Setup environment .env
+                                        file</a></li>
+                                    <li class="sidebar-sub-header"><a href="#_4-update-pusher-configuration"
+                                                                      class="sidebar-link">4. Update Pusher
+                                        Configuration</a></li>
+                                    <li class="sidebar-sub-header"><a href="#_5-admin-login" class="sidebar-link">5.
+                                        Admin login</a></li>
+                                    <li class="sidebar-sub-header"><a href="#_6-landing-page"
+                                                                      class="sidebar-link">6. Landing page</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#technical-users" class="sidebar-link">Technical Users</a>
+                                <ul class="sidebar-sub-headers">
+                                    <li class="sidebar-sub-header"><a href="#_1-setup-environment-env-file"
+                                                                      class="sidebar-link">1. Setup environment .env
+                                        file</a></li>
+                                    <li class="sidebar-sub-header"><a href="#_2-composer-install-for-laravel"
+                                                                      class="sidebar-link">2. Composer install (For
+                                        Laravel)</a></li>
+                                    <li class="sidebar-sub-header"><a href="#_3-install-npm-dependencies"
+                                                                      class="sidebar-link">3. Install npm
+                                        Dependencies</a></li>
+                                    <li class="sidebar-sub-header"><a href="#_4-run-migrations"
+                                                                      class="sidebar-link">4. Run migrations</a></li>
+                                    <li class="sidebar-sub-header"><a href="#_5-install-passport"
+                                                                      class="sidebar-link">5. Install Passport</a></li>
+                                    <li class="sidebar-sub-header"><a href="#_6-import-default-db-optional"
+                                                                      class="sidebar-link">6. Import default DB
+                                        (Optional)</a></li>
+                                    <li class="sidebar-sub-header"><a href="#_7-build-the-project"
+                                                                      class="sidebar-link">7. Build the Project</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#key-features-and-concepts" class="sidebar-link">Key Features and
+                                Concepts</a>
+                                <ul class="sidebar-sub-headers">
+                                    <li class="sidebar-sub-header"><a href="#conversations" class="sidebar-link">Conversations</a>
+                                    </li>
+                                    <li class="sidebar-sub-header"><a href="#read-receipt" class="sidebar-link">Read
+                                        receipt</a></li>
+                                    <li class="sidebar-sub-header"><a href="#files-upload" class="sidebar-link">Files
+                                        Upload</a></li>
+                                    <li class="sidebar-sub-header"><a href="#youtube-video-integration"
+                                                                      class="sidebar-link">Youtube Video Integration</a>
+                                    </li>
+                                    <li class="sidebar-sub-header"><a href="#current-status-indication"
+                                                                      class="sidebar-link">Current Status Indication</a>
+                                    </li>
+                                    <li class="sidebar-sub-header"><a href="#emoji" class="sidebar-link">Emoji 😄
+                                        💥 💖</a></li>
+                                    <li class="sidebar-sub-header"><a href="#delete-conversation"
+                                                                      class="sidebar-link">Delete Conversation</a></li>
+                                    <li class="sidebar-sub-header"><a href="#draft-message" class="sidebar-link">Draft
+                                        Message</a></li>
+                                    <li class="sidebar-sub-header"><a href="#incoming-message-notification"
+                                                                      class="sidebar-link">Incoming message
+                                        Notification</a></li>
+                                    <li class="sidebar-sub-header"><a href="#member-profile" class="sidebar-link">Member
+                                        Profile</a></li>
+                                    <li class="sidebar-sub-header"><a href="#user-profile" class="sidebar-link">User
+                                        Profile</a></li>
+                                    <li class="sidebar-sub-header"><a href="#users-and-roles-management"
+                                                                      class="sidebar-link">Users and Roles
+                                        Management</a></li>
+                                    <li class="sidebar-sub-header"><a href="#optimizations-for-animation"
+                                                                      class="sidebar-link">Optimizations for
+                                        Animation</a></li>
+                                    <li class="sidebar-sub-header"><a href="#use-initials" class="sidebar-link">Use
+                                        Initials</a></li>
+                                    <li class="sidebar-sub-header"><a href="#security" class="sidebar-link">Security</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                </li>
+            </ul>
+        </aside>
+        <main class="page">
+            <div class="theme-default-content content__default"><h1 id="guide"><a href="#guide"
+                                                                                  class="header-anchor">#</a> Guide</h1>
+                <p>The goal of InfyChat is to give an easy way for everyone can chat using web browser at an affordable
+                    price.</p>
+                <h2 id="technologies-used"><a href="#technologies-used" class="header-anchor">#</a> Technologies Used
+                </h2>
+                <p>This system uses multiple technologies to give the best possible experience.</p>
+                <ul>
+                    <li>PHP with Laravel Framework</li>
+                    <li>MySQL</li>
+                    <li>JQuery</li>
+                    <li>AJAX</li>
+                </ul>
+                <h2 id="installation-guide"><a href="#installation-guide" class="header-anchor">#</a> Installation Guide
+                </h2>
+                <p>We tried our best to make the installation of the system as easy as possible.
+                    System Requirements
+                    It is assumed that you have primary knowledge Laravel installation knowledge since this application
+                    is built on Laravel.</p>
+                <h3 id="system-requirement"><a href="#system-requirement" class="header-anchor">#</a> System Requirement
+                </h3>
+                <p>It is assumed that you have primary knowledge Laravel and JS application installation knowledge since
+                    this application is built on Laravel with JS.</p>
+                <p>You can read about server Requirements <a href="https://laravel.com/docs/6.x#server-requirements"
+                                                             target="_blank" rel="noopener noreferrer">here
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100"
+                         width="15" height="15" class="icon outbound">
+                        <path fill="currentColor"
+                              d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                        <polygon fill="currentColor"
+                                 points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                    </svg>
+                </a></p>
+                <p>You need to enable curl extension.</p>
+                <p>You need to add <a href="http://curl.haxx.se/ca/cacert.pem" target="_blank"
+                                      rel="noopener noreferrer">cacert.pem
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100"
+                         width="15" height="15" class="icon outbound">
+                        <path fill="currentColor"
+                              d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                        <polygon fill="currentColor"
+                                 points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                    </svg>
+                </a> certificate path in your php.ini file. Click <a
+                        href="https://stackoverflow.com/questions/25169623/update-wamp-apache-to-use-new-cacert-pem"
+                        target="_blank" rel="noopener noreferrer">here
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100"
+                         width="15" height="15" class="icon outbound">
+                        <path fill="currentColor"
+                              d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                        <polygon fill="currentColor"
+                                 points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                    </svg>
+                </a> to see how to set it.
+                </p>
+                <p>You need update below variables in php.ini file if you want to send bigger files (Optional).</p>
+                <p>upload_max_filesize = 50M</p>
+                <p>max_file_uploads = 50</p>
+                <p>post_max_size = 100M</p>
+                <h3 id="setup-infychat-system"><a href="#setup-infychat-system" class="header-anchor">#</a> Setup
+                    InfyChat System</h3>
+                <p>If you have purchased the InfyChat system then you will be able to find 2 different zip files into
+                    it.</p>
+                <ol>
+                    <li>dist.zip - For Non-Technical Users</li>
+                    <li>src.zip - For Technical Users</li>
+                </ol>
+                <h3 id="setup-infychat-into-local-environment"><a href="#setup-infychat-into-local-environment"
+                                                                  class="header-anchor">#</a> Setup InfyChat into Local
+                    Environment</h3>
+                <p>You can setup InfyChat into your local by using both zip files, but we recommend to use dist file so
+                    you have to perform minimal steps.</p>
+                <p>Here are some steps to setup InfyChat into your local environment :</p>
+                <p><strong>1. Install xampp/wamp (if you don't have it).</strong></p>
+                <p><strong>2. Create folder <code>InfyChat</code></strong></p>
+                <ul>
+                    <li>if you are using wamp then create InfyChat folder under you_path_to_wamp/www/</li>
+                    <li>if you are using xamp then create InfyChat folder under you_path_to_xamp/htdocs/</li>
+                </ul>
+                <p><strong>3. Unzip dist/src zip to InfyChat folder</strong></p>
+                <p><strong>4. Point the domain to the uploaded folder</strong></p>
+                <p>You need to create virtual host first to setup InfyChat. You can find steps here to create virtual
+                    host.</p>
+                <ul>
+                    <li>You can find steps <a
+                            href="https://medium.com/d6-digital/create-virtual-host-for-apache-on-windows-10-by-using-xampp-8664b0427567"
+                            target="_blank" rel="noopener noreferrer">here
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100"
+                             width="15" height="15" class="icon outbound">
+                            <path fill="currentColor"
+                                  d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                            <polygon fill="currentColor"
+                                     points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                        </svg>
+                    </a> to create virtual host on <code>XAMPP</code>.
+                    </li>
+                    <li>You can find steps <a
+                            href="http://codedecode.co.in/blog/wordpress/set-up-virtual-host-with-wamp/" target="_blank"
+                            rel="noopener noreferrer">here
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100"
+                             width="15" height="15" class="icon outbound">
+                            <path fill="currentColor"
+                                  d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                            <polygon fill="currentColor"
+                                     points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                        </svg>
+                    </a> to create virtual host on <code>WAMP</code>.
+                    </li>
+                </ul>
+                <p>Point your domain or subdomain to the public directory inside the InfyChat folder.</p>
+                <p>Please note that, InfyChat must be installed on a primary domain or subdomain. Installing on a
+                    sub-folder will not work, for example:</p>
+                <pre><code>    example.com/InfyChat (Invalid)
+    localhost/InfyChat (Invalid) if you are putting it in sub folder or root website)
+    example.com (Valid)
+    local.InfyChat.com (Valid)
+    InfyChat.test (Valid)
+</code></pre>
+                <p><strong>5. Open the link</strong></p>
+                <p>Open the link to the domain in the browser (Example: https://local.InfyChat.com).</p>
+                <h3 id="setup-one-signal-web-notifications"><a href="#setup-one-signal-web-notifications"
+                                                               class="header-anchor">#</a> Setup One Signal Web
+                    Notifications</h3>
+                <ol>
+                    <li>
+                        <p>Go to <a href="https://app.onesignal.com" target="_blank" rel="noopener noreferrer">One
+                            Signal Site
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+                                 viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                <path fill="currentColor"
+                                      d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                                <polygon fill="currentColor"
+                                         points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                            </svg>
+                        </a></p>
+                    </li>
+                    <li><p>Create Account if you don't have and login.</p></li>
+                    <li><p>After login you will able to see below screen, click on <code>Add Application</code> <img
+                            src="../images/docs-images/one-signal/add-app.png" alt="Add Application"></p></li>
+                    <li><p>Now give you application name and click on button <code>Create</code> <img
+                            src="../images/docs-images/one-signal/create-app.png" alt="Create App"></p></li>
+                    <li><p>Now it will redirect you to dashboard and ask for <code>Edit Your App</code>.</p></li>
+                    <li><p>Select Web as like below screenshot and click on button <code>Next</code>.
+                        <img src="../images/docs-images/one-signal/edit-app.png" alt="Edit App"></p></li>
+                    <li><p>Now choose Step-1 Integration
+                        <img src="../images/docs-images/one-signal/choose-integration.png" alt="Integration"></p></li>
+                    <li><p>Give you Site Name, You Site Domain, and add your site icon as like below screenshot.
+                        <img src="../images/docs-images/one-signal/site-setup.png" alt="Site Setup"></p></li>
+                    <li><p>Now click on button <code>Add Prompt</code> <code>(Optional)</code> <img
+                            src="../images/docs-images/one-signal/add-prompt.png" alt="Add Prompt"></p></li>
+                    <li><p>Select Prompt whatever you want <code>(Optional)</code> <img
+                            src="../images/docs-images/one-signal/select-prompt.png" alt="Select Prompt"></p></li>
+                    <li><p>Welcome Notification <code>(Optional)</code> <img
+                            src="../images/docs-images/one-signal/welcome-notification.png" alt="Notification"></p></li>
+                    <li><p>Now Click on <code>Save</code> button at last.</p></li>
+                    <li><p>It will ask for copy code. you can just copy you app id from there and replace it into <code>.env</code>
+                        variable <code>ONE_SIGNAL_APP_ID</code>.</p></li>
+                    <li><p>It will ask for copy code. you just need to copy your app id from there and replace its value
+                        to <code>.env</code> variable <code>ONE_SIGNAL_APP_ID</code>.
+                        <img src="../images/docs-images/one-signal/copy-app-id.png" alt="Notification"></p></li>
+                    <li><p>Now Click on <code>Accounts and API Keys</code> On Top Right Corner.</p></li>
+                    <li><p>You can find your api key from <code>REST API Keys</code> section, copy it and replace into
+                        <code>.env</code> variable <code>ONE_SIGNAL_API_KEY</code></p></li>
+                    <li><p>that's it.</p></li>
+                </ol>
+                <h3 id="setup-google-auth"><a href="#setup-google-auth" class="header-anchor">#</a> Setup Google Auth
+                </h3>
+                <ol>
+                    <li><p>Login to you google account.</p></li>
+                    <li>
+                        <p>Go to <a href="https://console.developers.google.com/projectcreate?pli=1" target="_blank"
+                                    rel="noopener noreferrer">Here
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+                                 viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                <path fill="currentColor"
+                                      d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                                <polygon fill="currentColor"
+                                         points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                            </svg>
+                        </a> to create Project, Enter your Project Name and click on button <code>CREATE</code>.
+                            <img src="../images/docs-images/google/create-project.png" alt="Create Project"></p>
+                    </li>
+                    <li><p>Now click on<code>OAuth Consent Screen</code> on Right side bar and add your Application Name
+                        and Logo.
+                        <img src="../images/docs-images/google/oauth-1.png" alt="OAuth1"></p></li>
+                    <li><p>Now add your authorized site domain, your site home page and privacy policy link, you can
+                        also add term and policy link but its an optional.
+                        <img src="../images/docs-images/google/oauth-2.png" alt="OAuth1"></p></li>
+                </ol>
+                <p>Now click on button <code>Save</code>.</p>
+                <ol start="5">
+                    <li>Now it will display below popup, Click on <code>Create Credential</code> button and select
+                        <code>OAuth ClientId</code></li>
+                </ol>
+                <p><img src="../images/docs-images/google/create-credential.png" alt="Credentials"></p>
+                <ol start="6">
+                    <li><p>Now Select <code>Web Application</code> as per below screenshot.</p>
+                        <ul>
+                            <li>Enter your Application name, and add <code>Authorized Redirect URIs</code></li>
+                            <li>Authorized URI should be e.g <code>YOUR_DOMAIN/login/google/callback</code></li>
+                            <li>Just replace <code>YOUR_DOMAIN</code> by your site domain and replace full URL to <code>.env</code>
+                                variable <code>GOOGLE_REDIRECT</code></li>
+                        </ul>
+                    </li>
+                </ol>
+                <ul>
+                    <li>Replace it into <code>GOOGLE_REDIRECT</code></li>
+                </ul>
+                <p>And click on <code>CREATE</code> button.</p>
+                <p><img src="../images/docs-images/google/setup.png" alt="Setup"></p>
+                <ol start="7">
+                    <li>Now it will popup below modal, copy client id and replace it into <code>.env</code> variable
+                        <code>GOOGLE_CLIENT_ID</code>, also copy client secret and replace it into <code>.env</code>
+                        variable <code>GOOGLE_CLIENT_SECRET</code>.
+                    </li>
+                </ol>
+                <p><img src="../images/docs-images/google/copy-credentials.png" alt="Setup"></p>
+                <ol start="8">
+                    <li>That's it.</li>
+                </ol>
+                <h3 id="setup-facebook-auth"><a href="#setup-facebook-auth" class="header-anchor">#</a> Setup Facebook
+                    Auth</h3>
+                <ol>
+                    <li>
+                        <p>Go to <a href="https://developers.facebook.com" target="_blank" rel="noopener noreferrer">Here
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+                                 viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                <path fill="currentColor"
+                                      d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                                <polygon fill="currentColor"
+                                         points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                            </svg>
+                        </a> and login.
+                        </p>
+                    </li>
+                    <li><p>Select <code>My Apps</code> on Top Right Side Corner and Click on button <code>Create
+                        App</code>.
+                        <img src="../images/docs-images/facebook/create-app.png" alt="Create App"></p></li>
+                    <li><p>it will prompt below modal, add your app name and click on <code>Create AppId</code> button.
+                        <img src="../images/docs-images/facebook/create-app-id.png" alt="Create AppId"></p></li>
+                    <li><p>Now select <code>Web</code> and add <code>Site URL</code> and save.
+                        <img src="../images/docs-images/facebook/choose-platform.png" alt="Platform"></p></li>
+                    <li><p>Now on left side bar select <code>Setting</code> under <code>Facebook Login</code></p></li>
+                </ol>
+                <p><img src="../images/docs-images/facebook/fb-login.png" alt="Menu"></p>
+                <ol start="6">
+                    <li>Add your redirect callback url. e.g <code>MYSITE_URL/login/facebook/callback</code> and save
+                        changes.
+                    </li>
+                </ol>
+                <p>Remember that you only need to replace <code>MYSITE_URL</code> to your site url. and replace full url
+                    to <code>.env</code> variable <code>FACEBOOK_REDIRECT</code></p>
+                <p><img src="../images/docs-images/facebook/save-setting.png" alt="Create AppId"></p>
+                <ol start="7">
+                    <li>Now on left side bar under <code>Basic setting's</code> you will find app id and app secret.
+                    </li>
+                </ol>
+                <ul>
+                    <li>copy app id and replace it into <code>.env</code> variable <code>FACEBOOK_APP_ID</code>.</li>
+                    <li>copy app secret and replace it into <code>.env</code> variable <code>FACEBOOK_APP_SECRET</code>.
+                    </li>
+                </ul>
+                <p><img src="../images/docs-images/facebook/copy-app-id.png" alt="Create AppId"></p>
+                <p>And don't forget to add your privacy policy link of your site otherwise facebook don't allow to make
+                    your app live.</p>
+                <ol start="9">
+                    <li>You need make your app live for public usage, you can simply apply for it by turning on the
+                        toggle box.
+                    </li>
+                </ol>
+                <p><img src="../images/docs-images/facebook/make-live.png" alt="Make Live"></p>
+                <ol start="10">
+                    <li>that's it.</li>
+                </ol>
+                <h2 id="non-technical-users"><a href="#non-technical-users" class="header-anchor">#</a> Non-Technical
+                    Users</h2>
+                <p>If you are non-technical person and want to set up InfyChat on your server then you can directly copy
+                    the dist.zip folder to your web root directory on server and the following steps:</p>
+                <h3 id="_1-copy-files-to-web-server"><a href="#_1-copy-files-to-web-server" class="header-anchor">#</a>
+                    1. Copy files to web server</h3>
+                <p>Upload dist.zip to your web server's root (public_html) and extract it there.</p>
+                <h3 id="_2-setup-default-db"><a href="#_2-setup-default-db" class="header-anchor">#</a> 2. Setup Default
+                    DB</h3>
+                <ol>
+                    <li>Open PHPMyAdmin on your server and do a login.</li>
+                </ol>
+                <p><img src="../images/docs-images/db1.png" alt="Setup Default DB"></p>
+                <ol start="2">
+                    <li>Click on the Databases tab.</li>
+                </ol>
+                <p><img src="../images/docs-images/db2.png" alt="Setup Default DB"></p>
+                <ol start="3">
+                    <li>Create a new database and specify a Database name of your choice and Click Create button.</li>
+                </ol>
+                <p><img src="../images/docs-images/db3.png" alt="Setup Default DB"></p>
+                <ol start="4">
+                    <li>Now on the left, select the database (chat) OR the one that you have created.</li>
+                    <li>Click Import in the top menu</li>
+                </ol>
+                <p><img src="../images/docs-images/db4.png" alt="Setup Default DB"></p>
+                <ol start="6">
+                    <li>Under Import, choose the default sql file from dist/database/chat.sql and click button Go.</li>
+                </ol>
+                <p><img src="../images/docs-images/db5.png" alt="Setup Default DB"></p>
+                <h3 id="_3-setup-environment-env-file"><a href="#_3-setup-environment-env-file"
+                                                          class="header-anchor">#</a> 3. Setup environment .env file
+                </h3>
+                <ol>
+                    <li>Open .env file from your server's root folder.</li>
+                </ol>
+                <p><img src="../images/docs-images/setup.jpg" alt="Setup Default DB"></p>
+                <ol start="2">
+                    <li>Update your .env file</li>
+                </ol>
+                <p>You can find <a href="#_1-setup-environment-env-file">here</a> which env you need to replace</p>
+                <p>You can also use your choice of storage driver to store your media assets if you want. All of your
+                    attachments will be placed into that.
+                    And you should be ready to go.</p>
+                <h3 id="_4-update-pusher-configuration"><a href="#_4-update-pusher-configuration" class="header-anchor">#</a>
+                    4. Update Pusher Configuration</h3>
+                <p>Go to <a href="https://pusher.com/" target="_blank" rel="noopener noreferrer">pusher
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100"
+                         width="15" height="15" class="icon outbound">
+                        <path fill="currentColor"
+                              d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                        <polygon fill="currentColor"
+                                 points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                    </svg>
+                </a> website and do sign up and if you have an account you can login.
+                </p>
+                <ol>
+                    <li>After Login you will get below screen.</li>
+                </ol>
+                <p><img src="../images/docs-images/pusher1.png" alt="Setup Default DB"></p>
+                <ol start="2">
+                    <li>Click on “Create new app” button. After clicking this button you get below screen.</li>
+                </ol>
+                <p><img src="../images/docs-images/pusher2.png" alt="Setup Default DB"></p>
+                <ol start="3">
+                    <li>Now give your app name, select your cluster, select “JS” from front-end tech, “laravel” from
+                        back-end tech and click on “create my app” button. As shown in below image.
+                    </li>
+                </ol>
+                <p><img src="../images/docs-images/pusher3.png" alt="Setup Default DB"></p>
+                <ol start="4">
+                    <li>After creating app yow will redirect to below screen. After that click on “App settings” menu as
+                        pointed in below screen.
+                    </li>
+                </ol>
+                <p><img src="../images/docs-images/pusher4.png" alt="Setup Default DB"></p>
+                <ol start="5">
+                    <li>After clicking on “App Settings” you will redirect to below screen. From there select “Enable
+                        client events” checkbox and click on “Update” button.
+                    </li>
+                </ol>
+                <p><img src="../images/docs-images/pusher5.png" alt="Setup Default DB"></p>
+                <ol start="6">
+                    <li>Now click on “App Keys” menu and you will get below screen.</li>
+                </ol>
+                <p><img src="../images/docs-images/pusher6.png" alt="Setup Default DB"></p>
+                <ol start="7">
+                    <li><p>Now add this values in you env file.</p>
+                        <pre><code> - PUSHER_APP_ID - Your pusher app id
+ - PUSHER_APP_KEY - Your pusher app key
+ - PUSHER_APP_SECRET - Your pusher app secret
+ - PUSHER_APP_CLUSTER - Your pusher app cluster
+</code></pre>
+                    </li>
+                </ol>
+                <h3 id="_5-admin-login"><a href="#_5-admin-login" class="header-anchor">#</a> 5. Admin login</h3>
+                <p>You can login as admin using below credentials.</p>
+                <p>email: admin@gmail.com</p>
+                <p>password: admin</p>
+                <p><img src="../images/docs-images/admin-login.png" alt="Setup Default DB"></p>
+                <h3 id="_6-landing-page"><a href="#_6-landing-page" class="header-anchor">#</a> 6. Landing page</h3>
+                <p>You can access InfyChat app url by YOUR_APP_URL. Now you can see below landing page.</p>
+                <p><img src="../images/docs-images/chat-landing.png" alt="Setup Default DB"></p>
+                <p>Click on the Register button and do register using you email.</p>
+                <p><img src="../images/docs-images/register.png" alt="Setup Default DB"></p>
+                <p>Now check your email you will get below activation mail.</p>
+                <p><img src="../images/docs-images/verification-mail.png" alt="Setup Default DB"></p>
+                <p>Now click on this “Activate your account” button and you will be redirected to the login page as
+                    shown in below image and login using your email &amp; password.</p>
+                <p><img src="../images/docs-images/login.png" alt="Setup Default DB"></p>
+                <h2 id="technical-users"><a href="#technical-users" class="header-anchor">#</a> Technical Users</h2>
+                <p>If you are a developer and have a sound knowledge of installing the Laravel on the server then you
+                    can get started with the src.zip folder by following the below steps.</p>
+                <h3 id="_1-setup-environment-env-file"><a href="#_1-setup-environment-env-file"
+                                                          class="header-anchor">#</a> 1. Setup environment .env file
+                </h3>
+                <p>You need to change the following information into your environment (.env) file.</p>
+                <pre><code>- APP_NAME - Name of your Application/Library System
+- APP_URL - Change this URL with your server URL (including trailing path if you are putting it in sub folder or root website)
+- DB_HOST - Put your database hostname here
+- DB_PORT - Put your database port here if it does not default to 3306
+- DB_DATABASE - Change it to your database name
+- DB_USERNAME - Name of your database user
+- DB_PASSWORD - Password of your database user
+</code></pre>
+                <p>You will also need to set up mail configuration, you can read more about here for that setup based on
+                    mail service that you use.</p>
+                <pre><code>- MAIL_DRIVER
+- MAIL_HOST
+- MAIL_PORT
+- MAIL_USERNAME
+- MAIL_PASSWORD
+- MAIL_ENCRYPTION
+- MAIL_FROM_ADDRESS 
+- MAIL_FROM_NAME
+</code></pre>
+                <p>You have to add One Signal configuration, you can find steps <a
+                        href="#setup-one-signal-web-notifications">here</a> to configure one signal notification :</p>
+                <pre><code>- ONE_SIGNAL_APP_ID=
+- ONE_SIGNAL_API_KEY=
+</code></pre>
+                <p>Add Google &amp; Facebook Auth Configuration :</p>
+                <ul>
+                    <li><p>You can find steps <a href="#setup-google-auth-optional">here</a> to setup google auth.</p>
+                    </li>
+                    <li><p>You can find steps <a href="#setup-facebook-auth-optional">here</a> to setup facebook auth.
+                    </p>
+                        <ul>
+                            <li><p>GOOGLE_CLIENT_ID=</p></li>
+                            <li><p>GOOGLE_CLIENT_SECRET=</p></li>
+                            <li><p>GOOGLE_REDIRECT=&quot;YOUR_APP_URL/login/google/callback&quot;</p></li>
+                            <li><p>FACEBOOK_APP_ID=</p></li>
+                            <li><p>FACEBOOK_APP_SECRET=</p></li>
+                            <li><p>FACEBOOK_REDIRECT=&quot;YOUR_APP_URL/login/facebook/callback&quot;</p></li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>Note: replace YOUR_APP_URL by your domain.</p>
+                <p>You will also need to set up pusher configurations.</p>
+                <pre><code>- PUSHER_APP_ID - Your pusher app id
+- PUSHER_APP_KEY - Your pusher app key
+- PUSHER_APP_SECRET - Your pusher app secret
+- PUSHER_APP_CLUSTER - Your pusher app cluster
+</code></pre>
+                <p>You can also use your choice of storage driver to store your media assets if you want. All of your
+                    attachments will be placed into that.
+                    And you should be ready to go.</p>
+                <h3 id="_2-composer-install-for-laravel"><a href="#_2-composer-install-for-laravel"
+                                                            class="header-anchor">#</a> 2. Composer install (For
+                    Laravel)</h3>
+                <p>You need to install all laravel dependencies with the following command.</p>
+                <pre><code>composer install
+</code></pre>
+                <p>Once the composer installation is completed, run a command to set up a key.</p>
+                <pre><code>php artisan key:generate
+</code></pre>
+                <h3 id="_3-install-npm-dependencies"><a href="#_3-install-npm-dependencies" class="header-anchor">#</a>
+                    3. Install npm Dependencies</h3>
+                <p>Install node modules,</p>
+                <pre><code>npm install
+</code></pre>
+                <h3 id="_4-run-migrations"><a href="#_4-run-migrations" class="header-anchor">#</a> 4. Run migrations
+                </h3>
+                <p>Run migrations and seeders for creating a database and fill default data</p>
+                <pre><code>php artisan migrate --seed
+</code></pre>
+                <h3 id="_5-install-passport"><a href="#_5-install-passport" class="header-anchor">#</a> 5. Install
+                    Passport</h3>
+                <p>Install passport for authentication</p>
+                <pre><code>php artisan passport:install
+</code></pre>
+                <h3 id="_6-import-default-db-optional"><a href="#_6-import-default-db-optional"
+                                                          class="header-anchor">#</a> 6. Import default DB (Optional)
+                </h3>
+                <p>If you are not able to run migrations for some reason. for e.g. if using shared or FTP Hosting then
+                    you can import a pre-populated database file from dist folder to your database.</p>
+                <h3 id="_7-build-the-project"><a href="#_7-build-the-project" class="header-anchor">#</a> 7. Build the
+                    Project</h3>
+                <p>Build a project with a laravel mix. If you are running in dev mode then run,</p>
+                <pre><code>npm run dev
+</code></pre>
+                <p>Or if you are planning to use in production then run,</p>
+                <pre><code>npm run prod
+</code></pre>
+                <p>That's it and you are ready to go.</p>
+                <h2 id="key-features-and-concepts"><a href="#key-features-and-concepts" class="header-anchor">#</a> Key
+                    Features and Concepts</h2>
+                <p>Here are the Key Features and Concepts that InfyChat provides.</p>
+                <h3 id="conversations"><a href="#conversations" class="header-anchor">#</a> Conversations</h3>
+                <p>When you start chatting with any user you can see that conversation as opened and also on the
+                    conversations list as well. You can also chat with some other user by opening a new conversation
+                    popup and select the specific user to start to chat with him/her.</p>
+                <p>Also, Users can get a list of active chats with real-time unlimited chatting.</p>
+                <h3 id="read-receipt"><a href="#read-receipt" class="header-anchor">#</a> Read receipt</h3>
+                <p>Users can get real-time delivery and read receipt updates of chat messages on both sides.</p>
+                <h3 id="files-upload"><a href="#files-upload" class="header-anchor">#</a> Files Upload</h3>
+                <p>You are allowed to Multiple upload two-way file sharing like images, videos and some supporting
+                    documents e.g docs, Xls, pdf files, etc. And Light-box for getting a full-screen preview for
+                    images.</p>
+                <h3 id="youtube-video-integration"><a href="#youtube-video-integration" class="header-anchor">#</a>
+                    Youtube Video Integration</h3>
+                <p>In this feature, when a user sends any youtube video links to any user, the system will automatic
+                    detects it as a youtube video and it displays its thumbnail on chat.</p>
+                <h3 id="current-status-indication"><a href="#current-status-indication" class="header-anchor">#</a>
+                    Current Status Indication</h3>
+                <p>Online/Offline and Last seen status indication on the top of the chat and profile drawer as well.
+                    When a user is typing something to another user then <code>Typing</code> status is indicating to
+                    opposition user.</p>
+                <h3 id="emoji"><a href="#emoji" class="header-anchor">#</a> Emoji 😄 💥 💖</h3>
+                <p>You'll find all current smileys and people emojis in our chat app. Have fun with diving into the
+                    colorful world of emojis! ☺️</p>
+                <h3 id="delete-conversation"><a href="#delete-conversation" class="header-anchor">#</a> Delete
+                    Conversation</h3>
+                <p>By using this feature you can delete conversation with specific people.</p>
+                <h3 id="draft-message"><a href="#draft-message" class="header-anchor">#</a> Draft Message</h3>
+                <p>This feature is pretty cool, when you are sending message to someone and you have type lots of lines
+                    and your tab is closed, so don't worry you don't need to write all of that lines again, just go to
+                    that users conversation, and all your lines are there.</p>
+                <h3 id="incoming-message-notification"><a href="#incoming-message-notification"
+                                                          class="header-anchor">#</a> Incoming message Notification</h3>
+                <p>Users can get message notification for new messages with labels and counts on the conversations
+                    list.</p>
+                <h3 id="member-profile"><a href="#member-profile" class="header-anchor">#</a> Member Profile</h3>
+                <p>You can see detailed information of the user including user photo, current status, phone number, and
+                    his/her bio as well.</p>
+                <h3 id="user-profile"><a href="#user-profile" class="header-anchor">#</a> User Profile</h3>
+                <p>By using this feature, Logged in user can Customize his/her avatars. In the sense of updating his/her
+                    photo, mobile number and bio as well.</p>
+                <h3 id="users-and-roles-management"><a href="#users-and-roles-management" class="header-anchor">#</a>
+                    Users and Roles Management</h3>
+                <p>Admin can manage all users from the admin panel. By creating users, admin can provide username and
+                    password to new users and also user can register on his own.
+                    There are system default roles like Admin and Member. But admin can redefine as per his own choice
+                    and can create a new one as well.</p>
+                <h3 id="optimizations-for-animation"><a href="#optimizations-for-animation" class="header-anchor">#</a>
+                    Optimizations for Animation</h3>
+                <p>Many optimizations used for better UX such as smart caching or GPU powered animations.</p>
+                <h3 id="use-initials"><a href="#use-initials" class="header-anchor">#</a> Use Initials</h3>
+                <p>When people don't upload their profile photo we are rending user initials from people's name.</p>
+                <h3 id="security"><a href="#security" class="header-anchor">#</a> Security</h3>
+                <p>we are providing security from XSS by encoding user inputs so there is no possibility for xss. We
+                    also provide security from SQL Injection, so if any user will give any vulnerable input it will not
+                    affect our system.</p></div>
+            <footer class="page-edit"><!----> <!----></footer> <!----> </main>
+    </div>
+    <div class="global-ui"></div>
+</div>
+<script src="../js/styles.js" defer></script>
+<script src="../js/2.js" defer></script>
+<script src="../js/8.js" defer></script>
+<!--<script src="../js/1.js" defer></script>-->
+</body>
+</html>
