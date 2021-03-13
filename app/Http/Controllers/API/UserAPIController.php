@@ -6,6 +6,7 @@ use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\ChangePasswordRequest;
 use App\Http\Requests\UpdateUserNotificationRequest;
 use App\Http\Requests\UpdateUserProfileRequest;
+use App\Models\Consumer;
 use App\Models\User;
 use App\Repositories\UserRepository;
 use Auth;
@@ -38,8 +39,13 @@ class UserAPIController extends AppBaseController
      */
     public function getUsersList()
     {
-        $users = User::orderBy('name','asc')->get()->except(getLoggedInUserId());
-
+        $user = User::find(getLoggedInUserId());
+        if($user->user_type === 'creditor'){
+            $users = User::where('user_type', 'consumer')->where('company_ids', 'like', "%|$user->company_ids|%")->orderBy('name','asc')->get();
+        }else{
+            $company_ids = explode('|', trim($user->company_ids, '|'));
+            $users = User::where('user_type', 'creditor')->whereIn('company_ids', $company_ids)->orderBy('name', 'asc')->get();
+        }
         return $this->sendResponse(['users' => $users], 'Users retrieved successfully.');
     }
 

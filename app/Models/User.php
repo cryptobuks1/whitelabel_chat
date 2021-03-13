@@ -69,6 +69,9 @@ use Spatie\Permission\Traits\HasRoles;
  */
 class User extends Authenticatable
 {
+
+    protected $table = 'chat_users';
+
     use Notifiable, ImageTrait, HasApiTokens, HasRoles;
     use ImageTrait {
         deleteImage as traitDeleteImage;

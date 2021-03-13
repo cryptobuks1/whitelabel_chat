@@ -53,7 +53,7 @@ class ChatRepository extends BaseRepository
     {
         $authId = getLoggedInUserId();
 
-        $subQuery = Conversation::leftJoin('users as u', 'u.id', '=', DB::raw("if(from_id = $authId, to_id, from_id)"))
+        $subQuery = Conversation::leftJoin('chat_users as u', 'u.id', '=', DB::raw("if(from_id = $authId, to_id, from_id)"))
             ->leftJoin('message_action as ma', function (JoinClause $join) use ($authId) {
                 $join->on('ma.deleted_by', '=', DB::raw("$authId"));
                 $join->on('ma.conversation_id', '=', 'conversations.id');
