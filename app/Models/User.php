@@ -72,9 +72,30 @@ class User extends Authenticatable
 
     protected $table = 'chat_users';
 
+    protected $appends = ['company_name', 'logo_path'];
+
     use Notifiable, ImageTrait, HasApiTokens, HasRoles;
     use ImageTrait {
         deleteImage as traitDeleteImage;
+    }
+
+    public function getLogoPathAttribute()
+    {
+        if($this->user_type === "creditor"){
+            return $this->company->logoPath();
+        }
+        return env("MAIN_APP_URL")."/storage/logo/logo.png";
+    }
+
+    public function company(){
+        return $this->belongsTo('App\Models\Company', 'company_ids', 'id');
+    }
+    public function getCompanyNameAttribute()
+    {
+        if($this->user_type === "creditor"){
+            return $this->company->company_name;
+        }
+        return null;
     }
 
     /**
@@ -221,6 +242,7 @@ class User extends Authenticatable
             'is_system'         => $this->is_system,
             'role_name'         => $this->role_name,
             'role_id'           => $this->role_id,
+            'logo_path'           => $this->logo_path,
         ];
     }
 

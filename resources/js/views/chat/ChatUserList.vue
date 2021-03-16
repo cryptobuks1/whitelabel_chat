@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <div class="chat__person-box-detail">
-                        <h5 class="mb-1 chat__person-box-name">{{conversation.user.name}}</h5>
+                        <h5 class="mb-1 chat__person-box-name">{{conversation.user.name}}<small class="font-weight-bolder text-dark" v-if="conversation.user.user_type ==='creditor'"><br><i>{{ conversation.user.company_name }}</i></small></h5>
                         <i v-if="conversation.message_type === messageType.image" class="fa fa-camera"
                            aria-hidden="true"></i>
                         <i v-if="conversation.message_type === messageType.pdf" class="fa fa-file-pdf-o"
@@ -102,7 +102,7 @@
                                 <img :src="user.photo_url" alt="user-avatar-img" class="user-avatar-img">
                             </div>
                         </div>
-                        <span class="chat__person-box-name">{{user.name}}</span>
+                        <span class="chat__person-box-name">{{user.name}}<small class="font-weight-bolder text-dark" v-if="user.user_type ==='creditor'"><br><i>{{ user.company_name }}</i></small></span>
                     </li>
                 </ul>
             </div>

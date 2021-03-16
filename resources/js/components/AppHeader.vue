@@ -2,7 +2,8 @@
     <Header fixed>
         <SidebarToggler class="d-lg-none" display="md" mobile/>
         <b-link class="navbar-brand" :to="'/'">
-            <img class="navbar-brand-full" src="assets/images/logo-red-black.png" width="30" alt="InfyOm Logo">
+            <img v-if="loggedUser" class="navbar-brand-full" :src="loggedUser.logo_path" width="30" alt="Logo">
+            <img v-else class="navbar-brand-full" src="http://yn/storage/logo/logo.png" width="30" alt="Logo">
         </b-link>
         <SidebarToggler class="d-md-down-none" display="lg"/>
 
