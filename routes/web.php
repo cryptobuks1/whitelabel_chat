@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return redirect()->to(url('conversations'));
 });
+Route::get('autologin', 'AuthController@autoLogin');
 
 Route::get('/{any}', 'SinglePageController@index')->where('any', '^(?!api\/)[\/\w\.-]*');
 
@@ -52,3 +53,4 @@ Route::group(['middleware' => ['role:Admin', 'auth', 'user.activated']], functio
     Route::resource('roles', 'RoleController');
     Route::post('roles/{role}/update', 'RoleController@update');
 });
+

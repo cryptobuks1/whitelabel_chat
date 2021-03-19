@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Auth;
 use Carbon\Carbon;
 use Crypt;
 use Exception;
@@ -43,15 +44,23 @@ class AuthController extends AppBaseController
             }
 
             /** @var User $user */
-            $user = User::whereActivationCode($activationCode)->findOrFail($userId);
+            $user = User::whereActivationCode($activationCode)->findOrFail(
+                $userId
+            );
 
             if (empty($user)) {
-                Session::flash('msg', 'This account activation token is invalid');
+                Session::flash(
+                    'msg',
+                    'This account activation token is invalid'
+                );
 
                 return redirect('login');
             }
             if ($user->is_active) {
-                Session::flash('success', 'Your account already activated. Please do a login');
+                Session::flash(
+                    'success',
+                    'Your account already activated. Please do a login'
+                );
 
                 return redirect('login');
             }
@@ -60,14 +69,34 @@ class AuthController extends AppBaseController
             $user->email_verified_at = Carbon::now();
             $user->save();
 
-            Session::flash('success', 'Your account is successfully activated. Please do a login');
+            Session::flash(
+                'success',
+                'Your account is successfully activated. Please do a login'
+            );
 
             return redirect('login');
-
         } catch (Exception $e) {
             Session::flash('msg', 'Something went wrong');
 
             return redirect('login');
+        }
+    }
+
+    public function autoLogin(Request $request)
+    {
+        $user_id = $request->get('user_id');
+        $key = $request->get('key');
+        if ($key == env('MAIN_APP_KEY')) {
+            $user = User::find(1);
+            $tokenResult = $user->createToken('Personal Access Token');
+            $token = $tokenResult->token;
+            $token->save();
+
+            $user->update(['is_online' => 1, 'last_seen' => null]);
+            $access_token = $tokenResult->accessToken;
+            return view('auth.redirect', compact('access_token'));
+        } else {
+            return redirect()->back()->with('error', 'Key does not match!');
         }
     }
 }

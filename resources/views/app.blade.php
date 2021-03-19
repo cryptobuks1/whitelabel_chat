@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="csrf-token" content="{{csrf_token()}}">
-    <title>Infy Chat</title>
+    <title>Chat</title>
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css">
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
