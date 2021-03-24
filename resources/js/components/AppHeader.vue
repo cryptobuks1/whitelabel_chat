@@ -2,10 +2,10 @@
     <Header fixed>
         <SidebarToggler class="d-lg-none" display="md" mobile/>
         <b-link class="navbar-brand" :to="'/'">
-            <img v-if="loggedUser" class="navbar-brand-full" :src="loggedUser.logo_path" width="30" alt="Logo">
-            <img v-else class="navbar-brand-full" src="http://yn/storage/logo/logo.png" width="30" alt="Logo">
+            <img v-if="loggedUser" class="navbar-brand-full" :src="loggedUser.logo_path" style="height: 95%" alt="Logo">
+            <img v-else class="navbar-brand-full" src="http://yn/storage/logo/logo.png" style="height: 95%" alt="Logo">
         </b-link>
-        <SidebarToggler class="d-md-down-none" display="lg"/>
+        <!-- <SidebarToggler class="d-md-down-none" display="lg"/> -->
 
         <b-navbar-nav class="ml-auto">
             <AppHeaderDropdown right no-caret>

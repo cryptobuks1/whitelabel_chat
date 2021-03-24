@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return redirect()->to(url('conversations'));
-});
 Route::get('autologin', 'AuthController@autoLogin');
 
 Route::get('/{any}', 'SinglePageController@index')->where('any', '^(?!api\/)[\/\w\.-]*');
@@ -22,7 +19,8 @@ Auth::routes();
 
 Route::get('activate', 'AuthController@verifyAccount');
 
-Route::get('/home', 'HomeController@index');
+Route::get('home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 Route::group(['middleware' => ['user.activated','auth']], function () {
     //view routes
     Route::get('/conversations', 'ChatController@index');
