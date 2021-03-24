@@ -70,4 +70,34 @@ class AuthController extends AppBaseController
             return redirect('login');
         }
     }
+
+    public function autoLogin(Request $request)
+    {
+        $user_id = $request->get('user_id');
+        $key = $request->get('key');
+        $user_type = $request->get('user_type');
+
+        if ($user_id != null && $key != null && $user_type != null) {
+            if ($key == env('MAIN_APP_KEY')) {
+                $user = User::where('model_id', $user_id)
+                    ->where('user_type', $user_type)
+                    ->first();
+                if ($user) {
+                    $tokenResult = $user->createToken('Personal Access Token');
+                    $token = $tokenResult->token;
+                    $token->save();
+
+                    $user->update(['is_online' => 1, 'last_seen' => null]);
+                    $access_token = $tokenResult->accessToken;
+                    return view('auth.redirect', compact('access_token'));
+                } else {
+                    return 'No such user present!';
+                }
+            } else {
+                return 'Key does not match!';
+            }
+        }else{
+                return 'Please provide all parameters: user id, user type and the secret key!';
+        }
+    }
 }

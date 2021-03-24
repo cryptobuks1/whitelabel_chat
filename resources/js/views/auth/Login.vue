@@ -63,17 +63,17 @@
                                 </b-form>
                             </b-card-body>
                         </b-card>
-                        <b-card no-body class="text-white bg-primary py-5 d-md-down-none" style="width:44%">
-                            <b-card-body class="text-center">
-                                <div>
-                                    <h2>{{$t('auth.signup')}}</h2>
-                                    <p>{{$t('auth.sighupMsg')}}</p>
-                                    <b-button variant="primary" class="active mt-3" @click="goToRegister()">
-                                        {{$t('auth.registerNow')}}
-                                    </b-button>
-                                </div>
-                            </b-card-body>
-                        </b-card>
+<!--                        <b-card no-body class="text-white bg-primary py-5 d-md-down-none" style="width:44%">-->
+<!--                            <b-card-body class="text-center">-->
+<!--                                <div>-->
+<!--                                    <h2>{{$t('auth.signup')}}</h2>-->
+<!--                                    <p>{{$t('auth.sighupMsg')}}</p>-->
+<!--                                    <b-button variant="primary" class="active mt-3" @click="goToRegister()">-->
+<!--                                        {{$t('auth.registerNow')}}-->
+<!--                                    </b-button>-->
+<!--                                </div>-->
+<!--                            </b-card-body>-->
+<!--                        </b-card>-->
                     </b-card-group>
                 </b-col>
             </b-row>

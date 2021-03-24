@@ -2,7 +2,7 @@
     <div>
         <app-header/>
         <div class="app-body">
-            <app-sidebar/>
+            <!-- <app-sidebar/> -->
             <router-view></router-view>
         </div>
         <app-footer/>
@@ -59,5 +59,7 @@
 </script>
 
 <style scoped>
-
+.main{
+  margin: 0 !important
+}
 </style>

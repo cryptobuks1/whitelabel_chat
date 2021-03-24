@@ -61,7 +61,7 @@ const app = new Vue({
     i18n,
     watch: {
         $route (to, from) {
-            document.title = to.meta.title || 'InfyChat'
+            document.title = to.meta.title
         },
     },
     render: h => h(App),

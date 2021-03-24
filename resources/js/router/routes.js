@@ -16,7 +16,7 @@ const routes = [
         name: 'Login',
         component: Login,
         meta: {
-            title: 'Login | InfyChat',
+            title: 'Login',
         },
         beforeEnter (to, from, next) {
             if (!localStorage.getItem('infyChatAppToken')) {
@@ -30,7 +30,7 @@ const routes = [
         path: '/register',
         name: 'Register',
         meta: {
-            title: 'Register | InfyChat',
+            title: 'Register',
         },
         component: Register,
         beforeEnter (to, from, next) {
@@ -45,7 +45,7 @@ const routes = [
         path: '/forgot-password',
         name: 'ForgotPassword',
         meta: {
-            title: 'Forgot Password | InfyChat',
+            title: 'Forgot Password',
         },
         component: ForgotPassword,
         beforeEnter (to, from, next) {
@@ -60,7 +60,7 @@ const routes = [
         path: '/password/reset',
         name: 'ResetPassword',
         meta: {
-            title: 'Reset Password | InfyChat',
+            title: 'Reset Password',
         },
         component: ResetPassword,
         beforeEnter (to, from, next) {
@@ -88,7 +88,7 @@ const routes = [
                 path: 'conversations',
                 name: 'Conversations',
                 meta: {
-                    title: 'Conversations | InfyChat',
+                    title: 'Conversations',
                 },
                 component: Chat,
             },
@@ -96,7 +96,7 @@ const routes = [
                 path: '/profile',
                 name: 'Profile',
                 meta: {
-                    title: 'Edit Profile | InfyChat',
+                    title: 'Edit Profile',
                 },
                 component: Profile,
             },
@@ -104,7 +104,7 @@ const routes = [
                 path: '/users',
                 name: 'Users',
                 meta: {
-                    title: 'Users | InfyChat',
+                    title: 'Users',
                 },
                 component: Users,
             },
@@ -112,7 +112,7 @@ const routes = [
                 path: '/roles',
                 name: 'Roles',
                 meta: {
-                    title: 'Roles | InfyChat',
+                    title: 'Roles',
                 },
                 component: Roles,
             },

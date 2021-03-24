@@ -21,7 +21,7 @@
                             <img :src="selectedUserForChat.photo_url" alt="personImage" class="img-fluid">
                         </div>
                         <div class="pl-3">
-                            <h5 class="my-0 chat__area-title">{{selectedUserForChat.name}}</h5>
+                            <h5 class="my-0 chat__area-title">{{selectedUserForChat.name}}<small class="font-weight-bold text-dark font-italic" v-if="selectedUserForChat.user_type ==='creditor'"><br>{{ selectedUserForChat.company_name }}</small></h5>
                             <div class="typing position-relative" v-if="!isTyping">
                                 <span class="chat__area-header-status"
                                       :class="selectedUserForChat.is_online ?
