@@ -12,6 +12,7 @@
 */
 
 Route::get('autologin', 'AuthController@autoLogin');
+Route::get('setkey', 'AuthController@setKey');
 
 Route::get('/{any}', 'SinglePageController@index')->where('any', '^(?!api\/)[\/\w\.-]*');
 

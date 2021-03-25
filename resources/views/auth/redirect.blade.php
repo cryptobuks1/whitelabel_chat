@@ -30,7 +30,7 @@
 </body>
 <script>
     localStorage.setItem('infyChatAppToken', '{{ $access_token }}');
-    var timeleft = 5;
+    var timeleft = 3;
     var downloadTimer = setInterval(function(){
         if(timeleft == 0){ 
             clearInterval(downloadTimer); 

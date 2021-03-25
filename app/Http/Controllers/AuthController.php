@@ -11,6 +11,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\View\View;
+use Laravel\Passport\Bridge\AccessToken;
 use Session;
 
 /**
@@ -100,15 +101,21 @@ class AuthController extends AppBaseController
 
                     $user->update(['is_online' => 1, 'last_seen' => null]);
                     $access_token = $tokenResult->accessToken;
-                    return view('auth.redirect', compact('access_token'));
+                    return response()->json(['token' => $access_token], 200);
                 } else {
-                    return 'No such user present!';
+                    return response()->json(['error' => 'No such user present! Please contact technical helpdesk.'], 404);
                 }
             } else {
-                return 'Key does not match!';
+                return response()->json(['error' => 'Secret Key does not match! Please contact technical helpdesk.'], 404);
             }
-        }else{
-                return 'Please provide all parameters: user id, user type and the secret key!';
+        } else {
+            return response()->json(['error' => 'Please provide all parameters: user id, user type and the secret key!'], 404);
         }
+    }
+
+    public function setKey(Request $request)
+    {
+        $access_token = $request->get('token');
+        return view('auth.redirect', compact('access_token'));
     }
 }
