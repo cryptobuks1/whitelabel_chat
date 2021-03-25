@@ -123,7 +123,7 @@ class AuthController extends AppBaseController
                 'is_system' => false,
                 'email_verified_at' => $user->email_verified_at,
                 'model_id' => $user->id,
-                'user_type' => 'creditor',
+                'user_type' => $user_type,
                 'company_ids' => $user->company_id
             ]);
         }
