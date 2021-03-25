@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Consumer;
 use App\Models\User;
 use Auth;
 use Carbon\Carbon;
 use Crypt;
+use DB;
 use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -89,28 +91,50 @@ class AuthController extends AppBaseController
         $key = $request->get('key');
         $user_type = $request->get('user_type');
 
-        if ($user_id != null && $key != null && $user_type != null) {
-            if ($key == env('MAIN_APP_KEY')) {
-                $user = User::where('model_id', $user_id)
-                    ->where('user_type', $user_type)
-                    ->first();
-                if ($user) {
-                    $tokenResult = $user->createToken('Personal Access Token');
-                    $token = $tokenResult->token;
-                    $token->save();
-
-                    $user->update(['is_online' => 1, 'last_seen' => null]);
-                    $access_token = $tokenResult->accessToken;
-                    return response()->json(['token' => $access_token], 200);
-                } else {
-                    return response()->json(['error' => 'No such user present! Please contact technical helpdesk.'], 404);
-                }
-            } else {
-                return response()->json(['error' => 'Secret Key does not match! Please contact technical helpdesk.'], 404);
-            }
-        } else {
+        if ($user_id == null || $key == null || $user_type == null) {
             return response()->json(['error' => 'Please provide all parameters: user id, user type and the secret key!'], 404);
         }
+        if ($key != env('MAIN_APP_KEY')) {
+            return response()->json(['error' => 'Secret Key does not match! Please contact technical helpdesk.'], 404);
+        }
+        $chat_user = User::where('model_id', $user_id)->where('user_type', $user_type)->first();
+        if ($chat_user == null) {
+            if ($user_type == 'creditor') {
+                $user = DB::table('users')->where('id', $user_id)->first();
+            } elseif ($user_type == 'consumer') {
+                $user = Consumer::where('id', $user_id)->get()->first();
+            } else {
+                $user = null;
+            }
+            if ($user == null) {
+                return response()->json(['error' => "$user_type with id: $user_id could not be found"], 404);
+            }
+            $chat_user = User::create([
+                'name' => $user->name,
+                'email' => $user->email,
+                'password' => $user->password,
+                'phone' => $user->phone_no,
+                'last_seen' => now(),
+                'is_online' => true,
+                'about' => null,
+                'photo_url' => null,
+                'activation_code' => null,
+                'is_active' => true,
+                'is_system' => false,
+                'email_verified_at' => $user->email_verified_at,
+                'model_id' => $user->id,
+                'user_type' => 'creditor',
+                'company_ids' => $user->company_id
+            ]);
+        }
+        
+        $tokenResult = $chat_user->createToken('Personal Access Token');
+        $token = $tokenResult->token;
+        $token->save();
+
+        $chat_user->update(['is_online' => 1, 'last_seen' => null]);
+        $access_token = $tokenResult->accessToken;
+        return response()->json(['token' => $access_token], 200);
     }
 
     public function setKey(Request $request)

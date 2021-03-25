@@ -103,21 +103,8 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'phone',
-        'last_seen',
-        'is_online',
-        'about',
-        'photo_url',
-        'activation_code',
-        'is_active',
-        'is_system',
-        'email_verified_at',
-        'player_id',
-        'is_subscribed',
+    protected $guarded = [
+        'id', 'created_at', 'updated_at'
     ];
 
     static $PATH = 'users';
