@@ -98,19 +98,18 @@ class AuthController extends AppBaseController
             return response()->json(['error' => 'Secret Key does not match! Please contact technical helpdesk.'], 404);
         }
         $chat_user = User::where('model_id', $user_id)->where('user_type', $user_type)->first();
-        if ($chat_user == null) {
-            if ($user_type == 'creditor') {
-                $user = DB::table('users')->where('id', $user_id)->first();
-            } elseif ($user_type == 'consumer') {
-                $user = Consumer::where('id', $user_id)->get()->first();
-            } else {
-                $user = null;
-            }
-            if ($user == null) {
-                return response()->json(['error' => "$user_type with id: $user_id could not be found"], 404);
-            }
+
+        if ($user_type == 'creditor') {
+            $user = DB::table('users')->where('id', $user_id)->first();
+        } elseif ($user_type == 'consumer') {
+            $user = Consumer::where('id', $user_id)->get()->first();
+        } else {
+            $user = null;
         }
-        else{
+        if ($user == null) {
+            return response()->json(['error' => "$user_type with id: $user_id could not be found"], 404);
+        }
+        if (!$chat_user) {
 
             $chat_user = User::create([
                 'name' => $user->name,
