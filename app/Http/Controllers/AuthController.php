@@ -102,7 +102,8 @@ class AuthController extends AppBaseController
         if ($user_type == 'creditor') {
             $user = DB::table('users')->where('id', $user_id)->first();
         } elseif ($user_type == 'consumer') {
-            $user = Consumer::where('id', $user_id)->get()->first();
+            //$user = Consumer::where('id', $user_id)->get()->first();
+            $user = DB::table('consumer_logins')->where('id', $user_id)->first();
         } else {
             $user = null;
         }
