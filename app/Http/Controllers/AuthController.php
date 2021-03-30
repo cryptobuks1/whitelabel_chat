@@ -109,6 +109,9 @@ class AuthController extends AppBaseController
             if ($user == null) {
                 return response()->json(['error' => "$user_type with id: $user_id could not be found"], 404);
             }
+        }
+        else{
+
             $chat_user = User::create([
                 'name' => $user->name,
                 'email' => $user->email,
