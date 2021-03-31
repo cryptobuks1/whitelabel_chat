@@ -94,7 +94,7 @@ class AuthController extends AppBaseController
         if ($user_id == null || $key == null || $user_type == null) {
             return response()->json(['error' => 'Please provide all parameters: user id, user type and the secret key!'], 404);
         }
-        if ($key != env('MAIN_APP_KEY')) {
+        if ($key != '12551a11s54d22awerws21s33564sdf21s21f2s1d22e') {
             return response()->json(['error' => 'Secret Key does not match! Please contact technical helpdesk.'], 404);
         }
         $chat_user = User::where('model_id', $user_id)->where('user_type', $user_type)->first();
@@ -102,8 +102,7 @@ class AuthController extends AppBaseController
         if ($user_type == 'creditor') {
             $user = DB::table('users')->where('id', $user_id)->first();
         } elseif ($user_type == 'consumer') {
-            //$user = Consumer::where('id', $user_id)->get()->first();
-            $user = DB::table('consumer_logins')->where('id', $user_id)->first();
+            $user = Consumer::find($user_id);           
         } else {
             $user = null;
         }
@@ -116,7 +115,7 @@ class AuthController extends AppBaseController
                 'name' => $user->name,
                 'email' => $user->email,
                 'password' => $user->password,
-                'phone' => $user->phone_no,
+                //'phone' => $user->phone_no,
                 'last_seen' => now(),
                 'is_online' => true,
                 'about' => null,
