@@ -84,7 +84,7 @@ class User extends Authenticatable
         if($this->user_type === "creditor"){
             return $this->company->logoPath();
         }
-        return env("MAIN_APP_URL")."/storage/logo/logo.png";
+        return config('chat_app.main_app_url').'/storage/logo/logo.png';
     }
 
     public function company(){

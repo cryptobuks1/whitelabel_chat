@@ -94,7 +94,7 @@ class AuthController extends AppBaseController
         if ($user_id == null || $key == null || $user_type == null) {
             return response()->json(['error' => 'Please provide all parameters: user id, user type and the secret key!'], 404);
         }
-        if ($key != env('MAIN_APP_KEY')) {
+        if ($key != config('chat_app.key')) {
             return response()->json(['error' => 'Secret Key does not match! Please contact technical helpdesk.'], 404);
         }
         $chat_user = User::where('model_id', $user_id)->where('user_type', $user_type)->first();
@@ -109,7 +109,6 @@ class AuthController extends AppBaseController
             if ($user == null) {
                 return response()->json(['error' => "$user_type with id: $user_id could not be found"], 404);
             }
-        }else{
             $chat_user = User::create([
                 'name' => $user->name,
                 'email' => $user->email,
