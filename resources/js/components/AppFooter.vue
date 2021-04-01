@@ -1,5 +1,5 @@
 <template>
-  <footer class="app-footer row" style="margin: 0; border: 1px solid blue;">
+  <footer class="app-footer row" style="margin: 0;">
     <div class="col-md-6">
       <img
         v-if="loggedUser"
@@ -11,13 +11,13 @@
       <img
         v-else
         class="navbar-brand-full"
-        src="http://yn/storage/logo/logo.png"
+        src="https://creditor.smashmybill.com/storage/logo/logo.png"
         style="height: 30px;"
         alt="Logo"
       />
     </div>
     <div class="col-md-6 text-right">
-      <p class="m-0">© 2021 Sunny Test Comp | All rights reserved</p>
+      <p class="m-0">© 2021 {{ loggedUser.company_name }} | All rights reserved</p>
     </div>
   </footer>
 </template>

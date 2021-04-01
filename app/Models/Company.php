@@ -9,6 +9,6 @@ class Company extends Model
 
     public function logoPath()
     {
-        return env("MAIN_APP_URL")."/storage/logo/$this->id-logo.png";
+        return config('chat_app.main_app_url')."/storage/logo/$this->id-logo.png";
     }
 }
