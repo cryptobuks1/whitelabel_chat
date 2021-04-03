@@ -84,10 +84,11 @@ class User extends Authenticatable
         if($this->user_type === "creditor"){
             return $this->company->logoPath();
         }
-        return env("MAIN_APP_URL")."/storage/logo/logo.png";
+        return config('chat_app.main_app_url').'/storage/logo/logo.png';
     }
 
-    public function company(){
+    public function company()
+    {
         return $this->belongsTo('App\Models\Company', 'company_ids', 'id');
     }
     public function getCompanyNameAttribute()
@@ -95,7 +96,7 @@ class User extends Authenticatable
         if($this->user_type === "creditor"){
             return $this->company->company_name;
         }
-        return null;
+        return "SmashMyBill";
     }
 
     /**
@@ -230,6 +231,7 @@ class User extends Authenticatable
             'role_name'         => $this->role_name,
             'role_id'           => $this->role_id,
             'logo_path'           => $this->logo_path,
+            'company_name'           => $this->company_name,
         ];
     }
 
