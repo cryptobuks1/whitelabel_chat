@@ -17,14 +17,14 @@
       />
     </div>
     <div class="col-md-6 text-right">
-      <p class="m-0">© 2021 {{ loggedUser.company_name }} | All rights reserved</p>
+      <p v-if="loggedUser" class="m-0">© 2021 {{ loggedUser.company_name }} | All rights reserved</p>
     </div>
   </footer>
 </template>
 
 <script>
-import * as types from '../store/types'
-import { mapActions, mapGetters } from 'vuex'
+import * as types from './../store/types';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'AppFooter',
