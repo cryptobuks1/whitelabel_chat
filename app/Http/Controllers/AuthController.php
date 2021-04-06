@@ -90,6 +90,8 @@ class AuthController extends AppBaseController
         $user_id = $request->get('user_id');
         $key = $request->get('key');
         $user_type = $request->get('user_type');
+        $company_ids = null;
+        $name = null;
 
         if ($user_id == null || $key == null || $user_type == null) {
             return response()->json(['error' => 'Please provide all parameters: user id, user type and the secret key!'], 404);
@@ -99,20 +101,28 @@ class AuthController extends AppBaseController
         }
         $chat_user = User::where('model_id', $user_id)->where('user_type', $user_type)->first();
 
-        if ($user_type == 'creditor') {
-            $user = DB::table('users')->where('id', $user_id)->first();
-        } elseif ($user_type == 'consumer') {
-            $user = Consumer::find($user_id);           
-        } else {
-            $user = null;
-        }
-        if ($user == null) {
-            return response()->json(['error' => "$user_type with id: $user_id could not be found"], 404);
-        }
-        if (!$chat_user) {
-
+        if ($chat_user == null) {
+            if ($user_type == 'creditor') {
+                $user = DB::table('users')->where('id', $user_id)->first();
+                $company_ids = $user->company_id;
+                $name = $user->name;
+            } elseif ($user_type == 'consumer') {
+                $user = Consumer::where('id', $user_id)->get()->first();
+                $consumers = DB::table('consumers')->where('consumer_login_id', $user->id)->get();
+                $name = $consumers->first()->first_name . ' ' . $consumers->first()->last_name;
+                foreach($consumers as $c){
+                    $company_ids .= '|'.$c->company_id;
+                }
+                $company_ids = '|'.trim($company_ids, '|').'|';
+            } else {
+                $user = null;
+            }
+            if ($user == null) {
+                return response()->json(['error' => "$user_type with id: $user_id could not be found"], 404);
+            }
+            
             $chat_user = User::create([
-                'name' => $user->name,
+                'name' => $name,
                 'email' => $user->email,
                 'password' => $user->password,
                 //'phone' => $user->phone_no,
@@ -126,7 +136,7 @@ class AuthController extends AppBaseController
                 'email_verified_at' => $user->email_verified_at,
                 'model_id' => $user->id,
                 'user_type' => $user_type,
-                'company_ids' => $user->company_id
+                'company_ids' => $company_ids
             ]);
         }
         
