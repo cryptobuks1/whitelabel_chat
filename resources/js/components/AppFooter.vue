@@ -1,5 +1,5 @@
 <template>
-  <footer class="app-footer row" style="margin: 0;">
+  <footer class="app-footer row" style="margin-right: 30px;background-color: #fff;border-radius: 5px;margin-left: 30px;">
     <div class="col-md-6">
       <img
         v-if="loggedUser"

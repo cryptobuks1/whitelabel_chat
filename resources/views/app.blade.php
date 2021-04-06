@@ -6,6 +6,11 @@
     <meta name="csrf-token" content="{{csrf_token()}}">
     <title>Chat</title>
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css">
+    <style>
+        .app{
+            background-color: #00A3FF;
+        }
+    </style>
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 <div id="app"></div>
