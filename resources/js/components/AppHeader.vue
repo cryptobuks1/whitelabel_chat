@@ -30,7 +30,7 @@
             <img src="https://consumer.smashmybill.com/assets/img/creditorlink.png" width="150" height="40"/>
           </a>
         </li>
-      <AppHeaderDropdown right no-caret>
+      <!-- <AppHeaderDropdown right no-caret>
         <template slot="header">
           <a
             class="nav-link"
@@ -62,7 +62,7 @@
             {{ $t('header.logout') }}
           </b-dropdown-item>
         </template>
-      </AppHeaderDropdown>
+      </AppHeaderDropdown> -->
     </b-navbar-nav>
   </Header>
 </template>
@@ -115,6 +115,11 @@ export default {
 <style scoped lang="scss">
 .app-header .navbar-toggler {
   outline: none;
+}
+
+.header-fixed .app-header {
+    padding-right: 20px;
+    padding-left: 55px;
 }
 
 @media (min-width: 992px) {
