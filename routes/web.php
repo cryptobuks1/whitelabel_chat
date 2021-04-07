@@ -16,7 +16,7 @@ Route::get('setkey', 'AuthController@setKey');
 
 Route::get('/{any}', 'SinglePageController@index')->where('any', '^(?!api\/)[\/\w\.-]*');
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('activate', 'AuthController@verifyAccount');
 
@@ -30,8 +30,8 @@ Route::group(['middleware' => ['user.activated','auth']], function () {
         //get all user list for chat
         Route::get('users-list', 'UserAPIController@getUsersList');
 
-        Route::get('get-profile', 'UserAPIController@getProfile');
-        Route::post('profile', 'UserAPIController@updateProfile')->name('update.profile');;
+        // Route::get('get-profile', 'UserAPIController@getProfile');
+        // Route::post('profile', 'UserAPIController@updateProfile')->name('update.profile');;
         Route::post('update-last-seen', 'UserAPIController@updateLastSeen');
 
         Route::post('send-message', 'ChatAPIController@sendMessage')->name('conversations.store');
@@ -43,7 +43,7 @@ Route::group(['middleware' => ['user.activated','auth']], function () {
     });
 });
 
-Route::group(['middleware' => ['role:Admin', 'auth', 'user.activated']], function () {
+/*Route::group(['middleware' => ['role:Admin', 'auth', 'user.activated']], function () {
     Route::resource('users', 'UserController');
     Route::post('users/{user}/active-de-active', 'UserController@activeDeActiveUser')
         ->name('active-de-active-user');
@@ -51,5 +51,5 @@ Route::group(['middleware' => ['role:Admin', 'auth', 'user.activated']], functio
 
     Route::resource('roles', 'RoleController');
     Route::post('roles/{role}/update', 'RoleController@update');
-});
+});*/
 

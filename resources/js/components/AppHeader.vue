@@ -30,7 +30,7 @@
             <img src="https://consumer.smashmybill.com/assets/img/creditorlink.png" width="150" height="40"/>
           </a>
         </li>
-      <AppHeaderDropdown right no-caret>
+      <!-- <AppHeaderDropdown right no-caret>
         <template slot="header">
           <a
             class="nav-link"
@@ -53,16 +53,16 @@
           <div class="dropdown-header text-center">
             <strong>{{ $t('header.account') }}</strong>
           </div>
-          <!-- <b-dropdown-item @click="goToUserProfile()">
+          <b-dropdown-item @click="goToUserProfile()">
             <i class="fa fa-user" />
             {{ $t('header.profile') }}
-          </b-dropdown-item> -->
+          </b-dropdown-item>
           <b-dropdown-item @click="onLogout">
             <i class="fa fa-lock" />
             {{ $t('header.logout') }}
           </b-dropdown-item>
         </template>
-      </AppHeaderDropdown>
+      </AppHeaderDropdown> -->
     </b-navbar-nav>
   </Header>
 </template>
