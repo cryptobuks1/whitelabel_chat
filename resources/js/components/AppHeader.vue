@@ -53,10 +53,10 @@
           <div class="dropdown-header text-center">
             <strong>{{ $t('header.account') }}</strong>
           </div>
-          <b-dropdown-item @click="goToUserProfile()">
+          <!-- <b-dropdown-item @click="goToUserProfile()">
             <i class="fa fa-user" />
             {{ $t('header.profile') }}
-          </b-dropdown-item>
+          </b-dropdown-item> -->
           <b-dropdown-item @click="onLogout">
             <i class="fa fa-lock" />
             {{ $t('header.logout') }}
@@ -115,6 +115,11 @@ export default {
 <style scoped lang="scss">
 .app-header .navbar-toggler {
   outline: none;
+}
+
+.header-fixed .app-header {
+    padding-right: 20px;
+    padding-left: 55px;
 }
 
 @media (min-width: 992px) {
