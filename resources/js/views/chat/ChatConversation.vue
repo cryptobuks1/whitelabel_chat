@@ -39,11 +39,11 @@
                             <div v-if="isTyping">{{$t('chat.typing')}}</div>
                         </div>
                     </div>
-                    <div class="chat__area-action">
+                    <!--<div class="chat__area-action">
                         <div class="chat__area-icon open-profile-menu" @click.stop="onToggleChatUserProfile()">
                             <i class="fa fa-cog" aria-hidden="true"></i>
                         </div>
-                    </div>
+                    </div>-->
                     <div class="dropdown cursor-pointer d-xl-none chat__profile-dropdown"
                          @click="isShowProfileDropdwon = !isShowProfileDropdwon">
                         <i class="fa fa-bars"></i>
