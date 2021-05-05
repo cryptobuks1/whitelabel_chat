@@ -24,13 +24,6 @@
         </div>
         <div class="chat-profile__divider"></div>
         <div class="chat-profile__column">
-            <h6 class="chat-profile__column-title">{{$t('chat.bio')}}</h6>
-            <p class="chat-profile__column-title-detail text-muted mb-0">
-                {{selectedUserForChat.about?selectedUserForChat.about:$t('chat.noBioUpdated')}}
-            </p>
-        </div>
-        <div class="chat-profile__divider"></div>
-        <div class="chat-profile__column">
             <h6 class="chat-profile__column-title">{{$t('chat.phone')}}</h6>
             <p class="chat-profile__column-title-detail text-muted mb-0">
                 {{selectedUserForChat.phone?selectedUserForChat.phone:$t('chat.noPhoneUpdated')}}
