@@ -91,6 +91,7 @@ class AuthController extends AppBaseController
         $key = $request->get('key');
         $user_type = $request->get('user_type');
         $company_ids = null;
+        $subclient_ids = null;
         $name = null;
 
         if ($user_id == null || $key == null || $user_type == null) {
@@ -105,6 +106,7 @@ class AuthController extends AppBaseController
             if ($user_type == 'creditor') {
                 $user = DB::table('users')->where('id', $user_id)->first();
                 $company_ids = $user->company_id;
+                $subclient_ids = $user->subclient_id;
                 $name = $user->name;
             } elseif ($user_type == 'consumer') {
                 $user = Consumer::where('id', $user_id)->get()->first();
@@ -112,8 +114,11 @@ class AuthController extends AppBaseController
                 $name = $consumers->first()->first_name . ' ' . $consumers->first()->last_name;
                 foreach($consumers as $c){
                     $company_ids .= '|'.$c->company_id;
+                    $subclient_ids = '|'. $c->subclient_id;
                 }
-                $company_ids = '|'.trim($company_ids, '|').'|';
+                $company_ids = '|' . trim($company_ids, '|') . '|';
+                $subclient_ids = '|'.trim($subclient_ids, '|').'|';
+
             } else {
                 $user = null;
             }
@@ -136,7 +141,8 @@ class AuthController extends AppBaseController
                 'email_verified_at' => $user->email_verified_at,
                 'model_id' => $user->id,
                 'user_type' => $user_type,
-                'company_ids' => $company_ids
+                'company_ids' => $company_ids,
+                'subclient_ids' => $subclient_ids
             ]);
         }
         

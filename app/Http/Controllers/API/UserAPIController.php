@@ -41,10 +41,22 @@ class UserAPIController extends AppBaseController
     {
         $user = User::find(getLoggedInUserId());
         if($user->user_type === 'creditor'){
-            $users = User::where('user_type', 'consumer')->where('company_ids', 'like', "%|$user->company_ids|%")->orderBy('name','asc')->get();
+            $users = User::where('user_type', 'consumer')
+            ->where('company_ids', 'like', "%|$user->company_ids|%")
+            ->when($user->subclient_ids != null, function($query) use ($user){
+              return $query->where('subclient_ids', 'like', "%|$user->subclient_ids|%");
+            })
+            ->orderBy('name','asc')
+            ->get();
         }else{
             $company_ids = explode('|', trim($user->company_ids, '|'));
-            $users = User::where('user_type', 'creditor')->whereIn('company_ids', $company_ids)->orderBy('name', 'asc')->get();
+            $subclient_ids = explode('|', trim($user->subclient_ids, '|'));
+            $users = User::where('user_type', 'creditor')
+            ->whereIn('company_ids', $company_ids)
+            ->when($user->subclient_ids != null, function($query) use ($subclient_ids){
+                return $query->whereIn('subclient_ids', $subclient_ids);
+            })
+            ->orderBy('name', 'asc')->get();
         }
         return $this->sendResponse(['users' => $users], 'Users retrieved successfully.');
     }
